@@ -5,7 +5,7 @@ CRM::CRM(QWidget *parent) : QMainWindow(parent)
 	, ui(new Ui::CRM)
 {
 	ui->setupUi(this);
-
+	
 }
 
 CRM::~CRM()

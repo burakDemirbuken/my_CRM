@@ -9,20 +9,27 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    CustomerCard.cpp \
-    CustomerPage.cpp \
-    main.cpp \
-    crm.cpp
+    src/CustomerPage.cpp \
+    src/main.cpp \
+    src/crm.cpp
 
 HEADERS += \
-    CustomerCard.h \
-    CustomerPage.h \
-    crm.hpp
+    include/CustomerPage.h \
+    include/crm.hpp
 
 FORMS += \
-    crm.ui \
-    customercard.ui \
-    customerpage.ui
+    form/crm.ui \
+    form/customerpage.ui
+
+# Qt include ve lib yollarını düzeltme
+INCLUDEPATH += \
+    include/ \
+    C:/Qt/6.9.0/mingw_64/include \
+    C:/Qt/6.9.0/mingw_64/include/QtCore \
+    C:/Qt/6.9.0/mingw_64/include/QtGui \
+    C:/Qt/6.9.0/mingw_64/include/QtWidgets
+
+LIBS += -L"C:/Qt/6.9.0/mingw_64/lib" -lQt6Widgets -lQt6Gui -lQt6Core
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
