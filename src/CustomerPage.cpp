@@ -1,4 +1,4 @@
-#include "CustomerPage.h"
+#include "CustomerPage.hpp"
 #include "ui_customerpage.h"
 
 CustomerPage::CustomerPage(QWidget *parent)

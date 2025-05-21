@@ -14,22 +14,15 @@ SOURCES += \
     src/crm.cpp
 
 HEADERS += \
-    include/CustomerPage.h \
+    include/CustomerPage.hpp \
     include/crm.hpp
 
 FORMS += \
     form/crm.ui \
     form/customerpage.ui
 
-# Qt include ve lib yollarını düzeltme
 INCLUDEPATH += \
-    include/ \
-    C:/Qt/6.9.0/mingw_64/include \
-    C:/Qt/6.9.0/mingw_64/include/QtCore \
-    C:/Qt/6.9.0/mingw_64/include/QtGui \
-    C:/Qt/6.9.0/mingw_64/include/QtWidgets
-
-LIBS += -L"C:/Qt/6.9.0/mingw_64/lib" -lQt6Widgets -lQt6Gui -lQt6Core
+    include/
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

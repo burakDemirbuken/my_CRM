@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>700</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1000</width>
-    <height>600</height>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -23,179 +23,6 @@
    <string notr="true">QMainWindow {
     background-color: #121212;
     color: white;
-}
-
-QWidget#sidebarWidget {
-    background-color: #1e1e1e;
-}
-
-QWidget#logoWidget {
-    background-color: #252525;
-}
-
-QWidget#headerWidget {
-    background-color: #1e1e1e;
-}
-
-QWidget#tabWidget {
-    background-color: #252525;
-}
-
-QWidget#profileWidget {
-    background-color: #252525;
-}
-
-QPushButton#menuButton {
-    background-color: transparent;
-    color: #aaaaaa;
-    border: none;
-    text-align: left;
-    padding-left: 10px;
-    font-size: 14px;
-}
-
-QPushButton#menuButton:hover {
-    color: white;
-}
-
-QPushButton#activeMenuButton {
-    background-color: #03dac6;
-    color: #121212;
-    border: none;
-    border-radius: 8px;
-    text-align: left;
-    padding-left: 10px;
-    font-size: 14px;
-}
-
-QLabel#logoLabel {
-    color: #03dac6;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-QLabel#headerLabel {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-QLineEdit#searchField {
-    background-color: #2c2c2c;
-    border: 1px solid #555555;
-    border-radius: 15px;
-    padding: 5px 10px;
-    color: #999999;
-}
-
-QPushButton#addButton {
-    background-color: #03dac6;
-    color: #121212;
-    border: none;
-    border-radius: 15px;
-    padding: 5px 15px;
-    font-size: 14px;
-}
-
-QPushButton#activeTabButton {
-    background-color: transparent;
-    color: #03dac6;
-    border: none;
-    font-size: 14px;
-}
-
-QPushButton#tabButton {
-    background-color: transparent;
-    color: #777777;
-    border: none;
-    font-size: 14px;
-}
-
-QComboBox#dateFilter {
-    background-color: transparent;
-    color: #777777;
-    border: none;
-    font-size: 14px;
-}
-
-QWidget#cardWidget {
-    background-color: #252525;
-    border-radius: 8px;
-}
-
-QLabel#customerName {
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-QLabel#customerInfo {
-    color: #aaaaaa;
-    font-size: 13px;
-}
-
-QPushButton#statusButton {
-    border-radius: 14px;
-    color: #121212;
-    font-size: 12px;
-}
-
-QPushButton#statusButton_inProgress {
-    background-color: #ff9800;
-}
-
-QPushButton#statusButton_completed {
-    background-color: #4caf50;
-}
-
-QPushButton#statusButton_urgent {
-    background-color: #f44336;
-    color: white;
-}
-
-QPushButton#whatsappButton {
-    background-color: #03dac6;
-    color: #121212;
-    border-radius: 14px;
-    font-size: 12px;
-}
-
-QLabel#paginationLabel {
-    color: #aaaaaa;
-    font-size: 14px;
-}
-
-QWidget#paginationWidget {
-    background-color: #252525;
-    border-radius: 15px;
-}
-
-QLabel#paginationNumber {
-    color: #aaaaaa;
-    font-size: 14px;
-}
-
-QLabel#activePaginationNumber {
-    color: #03dac6;
-    font-size: 14px;
-}
-
-QLabel#profileName {
-    color: white;
-    font-size: 14px;
-}
-
-QLabel#profileRole {
-    color: #aaaaaa;
-    font-size: 12px;
-}
-
-QLabel#profileAvatar {
-    background-color: #444444;
-    color: white;
-    border-radius: 20px;
-    font-size: 12px;
-    qproperty-alignment: AlignCenter;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -229,7 +56,46 @@ QLabel#profileAvatar {
         <height>16777215</height>
        </size>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1">
+      <property name="styleSheet">
+       <string notr="true">QWidget[sideBar=widget]{
+    background-color: #1e1e1e;
+}
+
+QWidget#logoWidget {
+    background-color: #252525;
+}
+
+QPushButton[sideBar=button] {
+    background-color: transparent;
+    color: #aaaaaa;
+    border: none;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+QPushButton[sideBar=button]:hover {
+    color: white;
+}
+
+QPushButton[sideBar=button]:checked  {
+    background-color: #03dac6;
+    color: #121212;
+    border: none;
+    border-radius: 8px;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+QLabel#logoLabel {
+    color: #03dac6;
+    font-weight: bold;
+    font-size: 16px;
+}
+</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -259,6 +125,9 @@ QLabel#profileAvatar {
            <height>60</height>
           </size>
          </property>
+         <property name="sideBar" stdset="0">
+          <string>widget</string>
+         </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QLabel" name="logoLabel">
@@ -274,119 +143,181 @@ QLabel#profileAvatar {
         </widget>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="menuLayout">
-         <property name="spacing">
-          <number>10</number>
+        <widget class="QWidget" name="sidebar" native="true">
+         <property name="sideBar" stdset="0">
+          <string>widget</string>
          </property>
-         <property name="leftMargin">
-          <number>20</number>
-         </property>
-         <property name="topMargin">
-          <number>20</number>
-         </property>
-         <property name="rightMargin">
-          <number>20</number>
-         </property>
-         <item>
-          <widget class="QPushButton" name="activeMenuButton">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>👥 Müşteriler</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="menuButton_3">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>📦 Ürünler</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="menuButton_2">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>🔧 Servis Kayıtları</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="menuButton_4">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>💬 WhatsApp</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="menuButton_5">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>📊 Raporlar</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="menuButton">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>40</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>⚙️ Ayarlar</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="verticalSpacer">
-           <property name="orientation">
-            <enum>Qt::Orientation::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
+         <layout class="QVBoxLayout" name="menuLayout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>20</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="customerButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>👥 Müşteriler</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <property name="autoRepeat">
+             <bool>false</bool>
+            </property>
+            <property name="autoDefault">
+             <bool>false</bool>
+            </property>
+            <property name="default">
+             <bool>false</bool>
+            </property>
+            <property name="flat">
+             <bool>false</bool>
+            </property>
+            <property name="sideBar" stdset="0">
+             <string>button</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="serviceRecordsButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>🔧 Servis Kayıtları</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="sideBar" stdset="0">
+             <string>button</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="stockButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>📦 Stok</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="sideBar" stdset="0">
+             <string>button</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="analysisButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>📊 Analiz</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="sideBar" stdset="0">
+             <string>button</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="settingsButton">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>⚙️ Ayarlar</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+            <property name="checked">
+             <bool>false</bool>
+            </property>
+            <property name="sideBar" stdset="0">
+             <string>button</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <spacer name="sideBarSpacer">
+            <property name="orientation">
+             <enum>Qt::Orientation::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
        </item>
       </layout>
      </widget>
     </item>
     <item>
-     <widget class="QStackedWidget" name="stackedWidget">
-      <widget class="QWidget" name="page"/>
-      <widget class="QWidget" name="page_2"/>
+     <widget class="QStackedWidget" name="pageStackedWidget">
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
      </widget>
     </item>
    </layout>
@@ -394,4 +325,7 @@ QLabel#profileAvatar {
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
